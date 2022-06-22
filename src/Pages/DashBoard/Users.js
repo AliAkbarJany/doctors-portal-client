@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 // 75(6).....
 const Users = () => {
     // React Query....
-    const { data: users, isLoading,refetch } = useQuery('users', () => fetch('http://localhost:5000/user',{
+    const { data: users, isLoading,refetch } = useQuery('users', () => fetch('https://boiling-sea-44852.herokuapp.com/user',{
         // 75(7)....
         method:'GET',
         headers:{
@@ -23,7 +23,7 @@ const Users = () => {
     /*
     const[users,setUsers]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/user')
+        fetch('https://boiling-sea-44852.herokuapp.com/user')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

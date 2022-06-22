@@ -6,9 +6,9 @@ import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
     // 75(8)....
-    const [user] =useAuthState(auth)
+    const [user] = useAuthState(auth)
     console.log(user)
-    const [admin]=useAdmin(user)
+    const [admin] = useAdmin(user)
     return (
         <div class="drawer drawer-mobile">
             <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
@@ -16,7 +16,7 @@ const Dashboard = () => {
                 {/* <!-- Page content here --> */}
                 <h2 className='text-3xl font-bold text-purple-500'>Welcome To my DASHBOARD</h2>
                 <Outlet></Outlet>
-                
+
 
             </div>
             <div class="drawer-side">
@@ -26,8 +26,13 @@ const Dashboard = () => {
                     <li><Link to='/dashboard'>My Appointment</Link></li>
                     <li><Link to='/dashboard/review'>My Review</Link></li>
                     <li><Link to='/dashboard/history'>My History</Link></li>
-                    {admin && <li><Link to='/dashboard/users'>ALL Users</Link></li>}
-                    {/* <li><Link to='/dashboard/users'>ALL Users</Link></li> */}
+                    {admin && <>
+                        <li><Link to='/dashboard/users'>ALL Users</Link></li>
+                        {/* //  mod 76(1)... */}
+                        <li><Link to='/dashboard/addDoctor'>Add a Doctor</Link></li>
+                        <li><Link to='/dashboard/manageDoctor'>Manage Doctor</Link></li>
+                    </>
+                    }
                 </ul>
 
             </div>

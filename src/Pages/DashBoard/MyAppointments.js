@@ -11,7 +11,7 @@ const MyAppointments = () => {
     useEffect(() => {
         if (user) {
             // mod 74(7,8)....
-            fetch(`http://localhost:5000/booking?patient=${user?.email}`, {
+            fetch(`https://boiling-sea-44852.herokuapp.com/booking?patient=${user?.email}`, {
                 // mod 75(4)
                 method: 'GET',
                 headers: {

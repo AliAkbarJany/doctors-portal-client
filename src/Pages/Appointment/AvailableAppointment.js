@@ -12,7 +12,7 @@ const AvailableAppointments = ({ date }) => {
 
     const formattedDate = format(date, 'PP');
     // React QUERY.....
-    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`http://localhost:5000/available?date=${formattedDate}`)
+    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`https://boiling-sea-44852.herokuapp.com/available?date=${formattedDate}`)
         .then(res => res.json()))
 
     if(isLoading){
@@ -60,7 +60,7 @@ const AvailableAppointment = ({ date }) => {
     const [treatment,setTreatment] =useState(null)
 
     const formatedDate= format(date, 'pp')
-    const {data:services,isLoading,refetch}=useQuery(['available',formatedDate], ()=>fetch(`http://localhost:5000/available?date=${formatedDate}`)
+    const {data:services,isLoading,refetch}=useQuery(['available',formatedDate], ()=>fetch(`https://boiling-sea-44852.herokuapp.com/available?date=${formatedDate}`)
             .then(res => res.json())
             )
             if(isLoading){
@@ -69,7 +69,7 @@ const AvailableAppointment = ({ date }) => {
     
     
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/available?date=${formatedDate}`)
+    //     fetch(`https://boiling-sea-44852.herokuapp.com/available?date=${formatedDate}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data)
